@@ -4,7 +4,7 @@ Landing page of the Agora Blog Aggregator. 👉 https://agora0.github.io/blog
 
 ## Blog Sources
 
-| [muitinⒾ](https://agora0.github.io/blog/initium) | [aidemnⒾ](https://agora0.github.io/blog/inmedia) | [sretta>Ⓜ ](https://agora0.github.io/blog/matters) | [qⓅ](https://agora0.github.io/blog/pq) | [sucoⓋ](https://agora0.github.io/blog/vocus) |
+| [muitinⒾ](https://agora0.github.io/blog/initium) | [aidemnⒾ](https://agora0.github.io/blog/inmedia) | [srettaⓂ](https://agora0.github.io/blog/matters) | [qⓅ](https://agora0.github.io/blog/pq) | [sucoⓋ](https://agora0.github.io/blog/vocus) |
 | -- | -- | -- | -- | -- |
 | [![](./img/portfolio/initium.jpg)](https://theinitium.com) | [![](./img/portfolio/inmedia.jpg)](https://inmediahk.net) | [![](./img/portfolio/matters.jpg)](https://matters.news) | [![](./img/portfolio/pq.jpg)](https://pourquoi.tw) | [![](./img/portfolio/vocus.jpg)](https://vocus.cc) |
 
