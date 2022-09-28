@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>中國駭客Lucky Mouse透過中國即時通訊軟體 MiMi發動「供應鏈攻擊」 | 零博客</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="中國駭客Lucky Mouse透過中國即時通訊軟體 MiMi發動「供應鏈攻擊」" />
+<meta name="author" content="蔡侯塞" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="美國眾議院議長裴洛西（Nancy Pelosi）8 月初訪台之時，有兩家資安業者發現中國駭客 Lucky Mouse 發動攻擊行動，這些駭客把一款中國廠商開發的即時通訊軟體「MiMi」植入後門程式後感染使用者的作業系統。而約一個月後，中國指責一家美國間諜機構入侵中國一所從事航太研究的大學。 " />
+<meta property="og:description" content="美國眾議院議長裴洛西（Nancy Pelosi）8 月初訪台之時，有兩家資安業者發現中國駭客 Lucky Mouse 發動攻擊行動，這些駭客把一款中國廠商開發的即時通訊軟體「MiMi」植入後門程式後感染使用者的作業系統。而約一個月後，中國指責一家美國間諜機構入侵中國一所從事航太研究的大學。 " />
+<link rel="canonical" href="https://agora0.gitlab.io/blog/pq/2022/09/14/PQ-%E4%B8%AD%E5%9C%8B%E9%A7%AD%E5%AE%A2lucky-mouse%E9%80%8F%E9%81%8E%E4%B8%AD%E5%9C%8B%E5%8D%B3%E6%99%82%E9%80%9A%E8%A8%8A%E8%BB%9F%E9%AB%94-mimi%E7%99%BC%E5%8B%95-%E4%BE%9B%E6%87%89%E9%8F%88%E6%94%BB%E6%93%8A.html" />
+<meta property="og:url" content="https://agora0.gitlab.io/blog/pq/2022/09/14/PQ-%E4%B8%AD%E5%9C%8B%E9%A7%AD%E5%AE%A2lucky-mouse%E9%80%8F%E9%81%8E%E4%B8%AD%E5%9C%8B%E5%8D%B3%E6%99%82%E9%80%9A%E8%A8%8A%E8%BB%9F%E9%AB%94-mimi%E7%99%BC%E5%8B%95-%E4%BE%9B%E6%87%89%E9%8F%88%E6%94%BB%E6%93%8A.html" />
+<meta property="og:site_name" content="零博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-14T03:56:17+08:00" />
+<script type="application/ld+json">
+{"headline":"中國駭客Lucky Mouse透過中國即時通訊軟體 MiMi發動「供應鏈攻擊」","dateModified":"2022-09-14T03:56:17+08:00","datePublished":"2022-09-14T03:56:17+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://agora0.gitlab.io/blog/pq/2022/09/14/PQ-%E4%B8%AD%E5%9C%8B%E9%A7%AD%E5%AE%A2lucky-mouse%E9%80%8F%E9%81%8E%E4%B8%AD%E5%9C%8B%E5%8D%B3%E6%99%82%E9%80%9A%E8%A8%8A%E8%BB%9F%E9%AB%94-mimi%E7%99%BC%E5%8B%95-%E4%BE%9B%E6%87%89%E9%8F%88%E6%94%BB%E6%93%8A.html"},"description":"美國眾議院議長裴洛西（Nancy Pelosi）8 月初訪台之時，有兩家資安業者發現中國駭客 Lucky Mouse 發動攻擊行動，這些駭客把一款中國廠商開發的即時通訊軟體「MiMi」植入後門程式後感染使用者的作業系統。而約一個月後，中國指責一家美國間諜機構入侵中國一所從事航太研究的大學。 ","author":{"@type":"Person","name":"蔡侯塞"},"@type":"BlogPosting","url":"https://agora0.gitlab.io/blog/pq/2022/09/14/PQ-%E4%B8%AD%E5%9C%8B%E9%A7%AD%E5%AE%A2lucky-mouse%E9%80%8F%E9%81%8E%E4%B8%AD%E5%9C%8B%E5%8D%B3%E6%99%82%E9%80%9A%E8%A8%8A%E8%BB%9F%E9%AB%94-mimi%E7%99%BC%E5%8B%95-%E4%BE%9B%E6%87%89%E9%8F%88%E6%94%BB%E6%93%8A.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://agora0.gitlab.io/blog/feed.xml" title="零博客" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">零博客</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/readme/">BLOG⓪</a><a class="page-link" href="/blog/covid/">C⓪V①D</a><a class="page-link" href="/blog/initium/">muitinⒾ</a><a class="page-link" href="/blog/inmedia/">aidemnⒾ</a><a class="page-link" href="/blog/matters/">srettaⓂ</a><a class="page-link" href="/blog/pq/">qⓅ</a><a class="page-link" href="/blog/vocus/">sucoⓋ</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">中國駭客Lucky Mouse透過中國即時通訊軟體 MiMi發動「供應鏈攻擊」</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-09-14T03:56:17+08:00" itemprop="datePublished">Sep 14, 2022
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">蔡侯塞</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>美國眾議院議長裴洛西（Nancy Pelosi）8 月初訪台之時，有兩家資安業者發現中國駭客 Lucky Mouse 發動攻擊行動，這些駭客把一款中國廠商開發的即時通訊軟體「MiMi」植入後門程式後感染使用者的作業系統。而約一個月後，中國指責一家美國間諜機構入侵中國一所從事航太研究的大學。 </p>
+
+
+
+<p>網路安全公司 SEKOIA 和趨勢科技的報告揭露，名為 Lucky Mouse 的中國駭客所發動的網路攻擊，把跨平台即時通訊軟體植入後門程式後感染作業系統，受感染的是中國開發的即時通訊軟體 MiMi，其中後門程式 RShell 感染 Linux 和 macOS 等作業系統、HyperBro 感染 Windows 作業系統。在 Lucky Mouse 8 月初的攻擊中，趨勢科技總共找到 13 個遭鎖定的目標，有 10 個在台灣、3 個在菲律賓，且疑似有台灣 IT 開發公司和銀行受害。值得注意的是，2021 年 7 月中旬就曾有第一份報告遭 RShell 攻擊。</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" src="https://storage.googleapis.com/stateless-34-84-11-249/2022/08/b95a46b5-超商出現「戰爭販子裴洛西滾出台灣」的電子看板，疑似遭駭。圖／翻攝自網路-1024x514.jpg" alt="" class="wp-image-109952" srcset="https://storage.googleapis.com/stateless-34-84-11-249/2022/08/b95a46b5-超商出現「戰爭販子裴洛西滾出台灣」的電子看板，疑似遭駭。圖／翻攝自網路-1024x514.jpg 1024w, https://storage.googleapis.com/stateless-34-84-11-249/2022/08/b95a46b5-超商出現「戰爭販子裴洛西滾出台灣」的電子看板，疑似遭駭。圖／翻攝自網路-300x151.jpg 300w, https://storage.googleapis.com/stateless-34-84-11-249/2022/08/b95a46b5-超商出現「戰爭販子裴洛西滾出台灣」的電子看板，疑似遭駭。圖／翻攝自網路-768x386.jpg 768w, https://storage.googleapis.com/stateless-34-84-11-249/2022/08/b95a46b5-超商出現「戰爭販子裴洛西滾出台灣」的電子看板，疑似遭駭。圖／翻攝自網路.jpg 1107w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>美國眾議院議長裴洛西訪台後，台鐵與統一超商的廣告看板遭到駭客攻擊，以簡體字寫下反裴洛西等言論。<br>圖／翻攝自網路</figcaption></figure></div>
+
+
+
+<p class="pqnote">中國駭客 Lucky Mouse 屬於<strong>中國駭客組織 APT27</strong>，也稱為 Bronze Union、Emissary Panda 和 Iron Tiger，自 2013 年以來一直很活躍，並且有替中國政府搜集政治、軍事情報的攻擊歷史。這種 APT 攻擊（Advanced Persistent Threat，進階持續性威脅）擅長使用各種「客製化」的植入程式（如 SysUpdate、HyperBro 和 PlugX）偷取高價值資訊。8 月這次攻擊的意義重大，它意味著攻擊者首次嘗試將 macOS 與 Windows 和 Linux 一起作為攻擊目標，具有<strong>供應鏈攻擊（Supply Chain Attack）</strong>的所有特徵，在此類攻擊中，駭客會先分析攻擊目標有在用的軟體，找出這些軟體的供應商中資安防護較差的，然後入侵供應商的軟體更新傳遞設施，把惡意程式植入其最新的軟體更新版本，再藉由軟體更新機制送入攻擊目標的電腦中。</p>
+
+
+
+<p>目前尚不清楚 MiMi 是否<strong>「被設計或重新用作監視工具」</strong>，但該應用程式已被另一位名為 Earth Berberoka（又名 Gambling Puppet）的專門攻擊中國博弈網站駭客所入侵。這也顯示，中國 APT 駭客之間會普遍性的共享工具。</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" src="https://storage.googleapis.com/stateless-34-84-11-249/2022/09/c8e22732-mimi-chat-app-1024x910.jpg" alt="" class="wp-image-114387" srcset="https://storage.googleapis.com/stateless-34-84-11-249/2022/09/c8e22732-mimi-chat-app-1024x910.jpg 1024w, https://storage.googleapis.com/stateless-34-84-11-249/2022/09/c8e22732-mimi-chat-app-300x267.jpg 300w, https://storage.googleapis.com/stateless-34-84-11-249/2022/09/c8e22732-mimi-chat-app-768x683.jpg 768w, https://storage.googleapis.com/stateless-34-84-11-249/2022/09/c8e22732-mimi-chat-app-1536x1365.jpg 1536w, https://storage.googleapis.com/stateless-34-84-11-249/2022/09/c8e22732-mimi-chat-app.jpg 1620w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>中國通訊APP「MiMi」遭中國駭客植入後門程式<br>圖／MiMi</figcaption></figure></div>
+
+
+
+<p class="pqnote">不過，這類駭客行為在西方媒體上沒有得到太多報導，可能是因為中國攻擊的不是在美國或歐洲的目標。但這是個警訊，因為這種供應鏈攻擊的模式有成長的趨勢，因此西方公司和政府應該注意並開始準備防禦。中國的駭客組織以及西方國家的駭客組織在過去的二十年裡都以間諜、監視和破壞活動而聞名。但這種攻擊跟典型的駭客行為不同，因為攻擊者是透過利用受信任的軟體進行攻擊的。這是一種軟體供應鏈攻擊，攻擊者篡改程式碼、軟體構建系統或軟體更新管道，所有的這些供應鏈系統都已成為世界數位經濟運行的關鍵。</p>
+
+
+
+<h2>美中駭客攻擊口水戰</h2>
+
+
+
+<p class="pqnote">中國國家計算機病毒應急處理中心在 9 月 5 日發聲明說，美國國家安全局（NSA）特定入侵行動辦公室（Office of Tailored Access Operation, TAO）對西安西北工業大學發動攻擊。該中心和 360 公司聯合組成技術團隊在西北工業大學 6 月受到攻擊後調查認為，美國國家安全局近年來對中國進行了超過 10,000 次「惡意」網路攻擊，收集了超過 140 GB 的資料。美國國家安全局和國務院拒絕對這些指控發表評論。美中之間對網路間諜活動的口水戰已越來越激烈，中國指責美國政府也變得更加直接。</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" src="https://storage.googleapis.com/stateless-34-84-11-249/2022/09/7f6a981b-hacker-with-laptop-and-usa-flag-in-background-cyber-attack-concept-1024x576.jpg" alt="Hacker with laptop and USA flag in background. Cyber attack concept" class="wp-image-114385" srcset="https://storage.googleapis.com/stateless-34-84-11-249/2022/09/7f6a981b-hacker-with-laptop-and-usa-flag-in-background-cyber-attack-concept-1024x576.jpg 1024w, https://storage.googleapis.com/stateless-34-84-11-249/2022/09/7f6a981b-hacker-with-laptop-and-usa-flag-in-background-cyber-attack-concept-300x169.jpg 300w, https://storage.googleapis.com/stateless-34-84-11-249/2022/09/7f6a981b-hacker-with-laptop-and-usa-flag-in-background-cyber-attack-concept-768x432.jpg 768w, https://storage.googleapis.com/stateless-34-84-11-249/2022/09/7f6a981b-hacker-with-laptop-and-usa-flag-in-background-cyber-attack-concept-1536x864.jpg 1536w, https://storage.googleapis.com/stateless-34-84-11-249/2022/09/7f6a981b-hacker-with-laptop-and-usa-flag-in-background-cyber-attack-concept.jpg 2000w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>中國政府指控美國駭客攻擊中國國內機構，竊取機密資料<br>圖／Envato Elements</figcaption></figure></div>
+
+
+
+<p>澳洲戰略政策研究所學者霍夫曼（Samantha Hoffman）表示，中國對美國網路攻擊的具體指控有所增加，美國應以中國參與從事間諜活動的具體細節作出回應。他說：「美國和盟國需要集中精力解釋為什麼中國在這個領域（指網路世界）的活動是不正常的、超出了大多數情報機構的作為，當然，中國可能會繼續以類似的指控作出回應，那可能是事實，也可能不是事實。」</p>
+
+
+
+<p>最近，中國透過直接指責美國進行網路攻擊來改變其戰略。今年 2 月中國網路安全公司盤古實驗室宣稱，在中國發現美國支持的駭客活動：國內 IT 系統中的惡意軟體是跟美國國家安全局有關的駭客組織 Equation 設計的。</p>
+
+
+
+<p>新加坡的中國網路活動專家奧斯汀（Greg Austin）表示，中國這一轉變旨在提高民眾對美國攻擊的認識，並從美國及其盟國手中奪回全球外交主動權，這些歐美盟友多年來一直指責中國發動網路攻擊。他說：「這是一個（戰略）方向的改變，可能已經遲了將近 10 年，美國政府及其盟國針對中國發表的資訊跟中國發表針對美國及其盟國的攻擊資訊之間有著相當大差異。中國官員對美國攻擊的規模幾乎一無所知。」</p>
+
+
+
+<p>參考來源：<br><a href="https://www.bloomberg.com/news/articles/2022-09-05/china-accuses-us-of-repeated-hacks-on-polytechnic-university?leadSource=uverify%20wall" target="_blank" rel="noopener">2022/09/05　Bloomberg　China Says US Hacked Aeronautics, Space Research University</a><br><a href="https://thediplomat.com/2022/09/a-recent-chinese-hack-is-a-wake-up-call-for-the-security-of-the-worlds-software-supply-chain/" target="_blank" rel="noopener">2022/09/07　The Diplomat　A Recent Chinese Hack Is a Wake-up Call for the Security of the World’s Software Supply Chain</a><br><a href="https://thehackernews.com/2022/08/chinese-hackers-backdoored-mimi-chat.html" target="_blank" rel="noopener">2022/08/13　The Hacker News　Chinese Hackers Backdoored MiMi Chat App to Target Windows, Linux, macOS Users</a><br><a href="https://www.cverc.org.cn/head/zhaiyao/news20220905-NPU.htm" target="_blank" rel="noopener">2022/09/05　中國國家計算機病毒應急處理中心　西北工業大學遭美國NSA網絡攻擊事件調查報告（之一）</a></p><p>The post <a href="https://pourquoi.tw/2022/09/14/intlnews-nasaoa-220907-220913-4/">中國駭客Lucky Mouse透過中國即時通訊軟體 MiMi發動「供應鏈攻擊」</a> first appeared on <a href="https://pourquoi.tw">pourquoi 報呱</a>.</p>
+
+  </div><a class="u-url" href="/blog/pq/2022/09/14/PQ-%E4%B8%AD%E5%9C%8B%E9%A7%AD%E5%AE%A2lucky-mouse%E9%80%8F%E9%81%8E%E4%B8%AD%E5%9C%8B%E5%8D%B3%E6%99%82%E9%80%9A%E8%A8%8A%E8%BB%9F%E9%AB%94-mimi%E7%99%BC%E5%8B%95-%E4%BE%9B%E6%87%89%E9%8F%88%E6%94%BB%E6%93%8A.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">零博客</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">零博客</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/agorahub"><svg class="svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg> <span class="username">agorahub</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Read blog on demand.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

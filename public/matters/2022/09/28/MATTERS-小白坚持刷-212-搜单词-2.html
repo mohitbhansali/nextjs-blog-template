@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>小白坚持刷 212 ～ 搜单词 2 | 零博客</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="小白坚持刷 212 ～ 搜单词 2" />
+<meta name="author" content="土豆炒青椒" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="基本信息 题号：212题厂：脸书难度系数：高 #79 升级版。 还是在 m * n 的矩阵中找单词。较 #79 不同的是，本次要搜寻一系列单词，如果单词出现在了矩阵中，则将出现单词以数组形式返回。 欲解 212，需先理解 79. 解题思路 按照 #79 的思路，可以先将目标单词根据单词首字母整理成 hashmap。再遍历矩阵，当格子和 hashmap 的 key 匹配时，再进行和 #79 类似的 上、下、左、右 四个方向查找。如果找到，则将单词添加进返回数组…… # 在 79 原理之上，引入 hashmap 的升级解法如下： class Solution: def findWords(self, board: List[List[str]], words: List[str]) -&gt; List[str]: # 「首字母」：「首字母对应单词数组。。。」 wordList = {} for word in words: if word[0] not in wordList: wordList[word[0]] = [word] else: wordList[word[0]].append(word) row, col = len(board), len(board[0]) res = [] def findWord(word, r, c, i, path): if i == len(word): return True if (r &lt; 0 or r &gt;= row or c &lt; 0 or c &gt;= col or (r, c) in path or board[r][c] != word[i]): return False path.add((r, c)) res = (findWord(word, r + 1, c, i + 1, path) or findWord(word, r - 1, c, i + 1, path) or findWord(word, r, c + 1, i + 1, path) or findWord(word, r, c - 1, i + 1, path)) path.remove((r, c)) return res for r in range(row): for c in range(col): if board[r][c] in wordList: for word in wordList[board[r][c]]: if findWord(word, r, c, 0, set()) and word not in res: res.append(word) return res 以上解法在逻辑上并无漏洞，但算法太费时，代码无法通过测试，所以需要引入更高级的数据结构——trie，简化时间复杂度。 维基百科。。。 简单理解，相对线性数据结构 hashmap，trie 类似一个树状字典。在遍历单词时，如果当前字符存在，就往下继续遍历；如果没有就提前返回 false。每个单词的末尾，即 leaf node，需要标注为 endWord。引入 trie 以后，原本遍历 hashmap 时需要的 O（n）的费时可以简化为 O（1）。为了进一步简化时间复杂度，在 trie 中添加 removeWord 方法：如果单词被找到，就删除它，因为本题中目标单词序列没有重复。。。 # 引入 Trie 后的完整代码如下 🥲 class TrieNode: def __init__(self): self.children = {} self.isWord = False self.refs = 0" />
+<meta property="og:description" content="基本信息 题号：212题厂：脸书难度系数：高 #79 升级版。 还是在 m * n 的矩阵中找单词。较 #79 不同的是，本次要搜寻一系列单词，如果单词出现在了矩阵中，则将出现单词以数组形式返回。 欲解 212，需先理解 79. 解题思路 按照 #79 的思路，可以先将目标单词根据单词首字母整理成 hashmap。再遍历矩阵，当格子和 hashmap 的 key 匹配时，再进行和 #79 类似的 上、下、左、右 四个方向查找。如果找到，则将单词添加进返回数组…… # 在 79 原理之上，引入 hashmap 的升级解法如下： class Solution: def findWords(self, board: List[List[str]], words: List[str]) -&gt; List[str]: # 「首字母」：「首字母对应单词数组。。。」 wordList = {} for word in words: if word[0] not in wordList: wordList[word[0]] = [word] else: wordList[word[0]].append(word) row, col = len(board), len(board[0]) res = [] def findWord(word, r, c, i, path): if i == len(word): return True if (r &lt; 0 or r &gt;= row or c &lt; 0 or c &gt;= col or (r, c) in path or board[r][c] != word[i]): return False path.add((r, c)) res = (findWord(word, r + 1, c, i + 1, path) or findWord(word, r - 1, c, i + 1, path) or findWord(word, r, c + 1, i + 1, path) or findWord(word, r, c - 1, i + 1, path)) path.remove((r, c)) return res for r in range(row): for c in range(col): if board[r][c] in wordList: for word in wordList[board[r][c]]: if findWord(word, r, c, 0, set()) and word not in res: res.append(word) return res 以上解法在逻辑上并无漏洞，但算法太费时，代码无法通过测试，所以需要引入更高级的数据结构——trie，简化时间复杂度。 维基百科。。。 简单理解，相对线性数据结构 hashmap，trie 类似一个树状字典。在遍历单词时，如果当前字符存在，就往下继续遍历；如果没有就提前返回 false。每个单词的末尾，即 leaf node，需要标注为 endWord。引入 trie 以后，原本遍历 hashmap 时需要的 O（n）的费时可以简化为 O（1）。为了进一步简化时间复杂度，在 trie 中添加 removeWord 方法：如果单词被找到，就删除它，因为本题中目标单词序列没有重复。。。 # 引入 Trie 后的完整代码如下 🥲 class TrieNode: def __init__(self): self.children = {} self.isWord = False self.refs = 0" />
+<link rel="canonical" href="https://agora0.gitlab.io/blog/matters/2022/09/28/MATTERS-%E5%B0%8F%E7%99%BD%E5%9D%9A%E6%8C%81%E5%88%B7-212-%E6%90%9C%E5%8D%95%E8%AF%8D-2.html" />
+<meta property="og:url" content="https://agora0.gitlab.io/blog/matters/2022/09/28/MATTERS-%E5%B0%8F%E7%99%BD%E5%9D%9A%E6%8C%81%E5%88%B7-212-%E6%90%9C%E5%8D%95%E8%AF%8D-2.html" />
+<meta property="og:site_name" content="零博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-28T09:57:49+08:00" />
+<script type="application/ld+json">
+{"headline":"小白坚持刷 212 ～ 搜单词 2","dateModified":"2022-09-28T09:57:49+08:00","datePublished":"2022-09-28T09:57:49+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://agora0.gitlab.io/blog/matters/2022/09/28/MATTERS-%E5%B0%8F%E7%99%BD%E5%9D%9A%E6%8C%81%E5%88%B7-212-%E6%90%9C%E5%8D%95%E8%AF%8D-2.html"},"description":"基本信息 题号：212题厂：脸书难度系数：高 #79 升级版。 还是在 m * n 的矩阵中找单词。较 #79 不同的是，本次要搜寻一系列单词，如果单词出现在了矩阵中，则将出现单词以数组形式返回。 欲解 212，需先理解 79. 解题思路 按照 #79 的思路，可以先将目标单词根据单词首字母整理成 hashmap。再遍历矩阵，当格子和 hashmap 的 key 匹配时，再进行和 #79 类似的 上、下、左、右 四个方向查找。如果找到，则将单词添加进返回数组…… # 在 79 原理之上，引入 hashmap 的升级解法如下： class Solution: def findWords(self, board: List[List[str]], words: List[str]) -&gt; List[str]: # 「首字母」：「首字母对应单词数组。。。」 wordList = {} for word in words: if word[0] not in wordList: wordList[word[0]] = [word] else: wordList[word[0]].append(word) row, col = len(board), len(board[0]) res = [] def findWord(word, r, c, i, path): if i == len(word): return True if (r &lt; 0 or r &gt;= row or c &lt; 0 or c &gt;= col or (r, c) in path or board[r][c] != word[i]): return False path.add((r, c)) res = (findWord(word, r + 1, c, i + 1, path) or findWord(word, r - 1, c, i + 1, path) or findWord(word, r, c + 1, i + 1, path) or findWord(word, r, c - 1, i + 1, path)) path.remove((r, c)) return res for r in range(row): for c in range(col): if board[r][c] in wordList: for word in wordList[board[r][c]]: if findWord(word, r, c, 0, set()) and word not in res: res.append(word) return res 以上解法在逻辑上并无漏洞，但算法太费时，代码无法通过测试，所以需要引入更高级的数据结构——trie，简化时间复杂度。 维基百科。。。 简单理解，相对线性数据结构 hashmap，trie 类似一个树状字典。在遍历单词时，如果当前字符存在，就往下继续遍历；如果没有就提前返回 false。每个单词的末尾，即 leaf node，需要标注为 endWord。引入 trie 以后，原本遍历 hashmap 时需要的 O（n）的费时可以简化为 O（1）。为了进一步简化时间复杂度，在 trie 中添加 removeWord 方法：如果单词被找到，就删除它，因为本题中目标单词序列没有重复。。。 # 引入 Trie 后的完整代码如下 🥲 class TrieNode: def __init__(self): self.children = {} self.isWord = False self.refs = 0","author":{"@type":"Person","name":"土豆炒青椒"},"@type":"BlogPosting","url":"https://agora0.gitlab.io/blog/matters/2022/09/28/MATTERS-%E5%B0%8F%E7%99%BD%E5%9D%9A%E6%8C%81%E5%88%B7-212-%E6%90%9C%E5%8D%95%E8%AF%8D-2.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://agora0.gitlab.io/blog/feed.xml" title="零博客" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">零博客</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/readme/">BLOG⓪</a><a class="page-link" href="/blog/covid/">C⓪V①D</a><a class="page-link" href="/blog/initium/">muitinⒾ</a><a class="page-link" href="/blog/inmedia/">aidemnⒾ</a><a class="page-link" href="/blog/matters/">srettaⓂ</a><a class="page-link" href="/blog/pq/">qⓅ</a><a class="page-link" href="/blog/vocus/">sucoⓋ</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">小白坚持刷 212 ～ 搜单词 2</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-09-28T09:57:49+08:00" itemprop="datePublished">Sep 28, 2022
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">土豆炒青椒</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><strong>基本信息</strong></p><ul><li>题号：212</li><li>题厂：脸书</li><li>难度系数：高</li></ul><p><br></p><hr><figure class="image"><img src="https://assets.matters.news/embed/7f3e0033-d54f-484b-a845-66b3aa6c0a1c.jpeg" data-asset-id="7f3e0033-d54f-484b-a845-66b3aa6c0a1c" referrerpolicy="no-referrer"><figcaption><span></span></figcaption></figure><p>#79 升级版。</p><p>还是在 m * n 的矩阵中找单词。较 #79 不同的是，本次要搜寻一系列单词，如果单词出现在了矩阵中，则将出现单词以数组形式返回。</p><p><u>欲解 212，需先理解 </u><a href="https://matters.news/@potato_pepper/331734-%E5%B0%8F%E7%99%BD%E7%BB%A7%E7%BB%AD%E5%88%B7-79-%E6%90%9C%E5%8D%95%E8%AF%8D-bafyreiavrr3ehzrqgum2dzdtzmt36tx4xvyjh7jhcneuymxy3qdyp4geci" rel="noopener noreferrer" target="_blank"><u>79</u></a><u>.</u></p><p><strong>解题思路</strong></p><ul><li>按照 #79 的思路，可以先将目标单词根据单词首字母整理成 hashmap。再遍历矩阵，当格子和 hashmap 的 key 匹配时，再进行和 #79 类似的 上、下、左、右 四个方向查找。如果找到，则将单词添加进返回数组……</li></ul><pre class="ql-syntax" spellcheck="false"># 在 79 原理之上，引入 hashmap 的升级解法如下：  
+class Solution:
+    def findWords(self, board: List[List[str]], words: List[str]) -&gt; List[str]:
+        # 「首字母」：「首字母对应单词数组。。。」
+        wordList = {}
+        
+        for word in words:
+            if word[0] not in wordList:
+                wordList[word[0]] = [word]
+            else:
+                wordList[word[0]].append(word)
+                
+        row, col = len(board), len(board[0])
+        res = []
+        
+        def findWord(word, r, c, i, path):
+            if i == len(word):
+                return True
+            
+            if (r &lt; 0 
+               or r &gt;= row
+               or c &lt; 0
+               or c &gt;= col
+               or (r, c) in path
+               or board[r][c] != word[i]):
+                return False
+            
+            path.add((r, c))
+            res = (findWord(word, r + 1, c, i + 1, path)
+                  or findWord(word, r - 1, c, i + 1, path)
+                  or findWord(word, r, c + 1, i + 1, path)
+                  or findWord(word, r, c - 1, i + 1, path))
+            path.remove((r, c))
+            
+            return res
+            
+        for r in range(row):
+            for c in range(col):
+                if board[r][c] in wordList:
+                    for word in wordList[board[r][c]]:
+                        if findWord(word, r, c, 0, set()) and word not in res:
+                            res.append(word)
+                            
+        return res
+</pre><p><br></p><ul><li>以上解法在逻辑上并无漏洞，但算法<strong>太费时，代码无法通过测试，所以需要引入更高级的数据结构——trie，简化时间复杂度</strong>。</li></ul><figure class="image"><img src="https://assets.matters.news/embed/ed4e1f87-9d7b-401f-a3a5-04e7bc4efea3.png" data-asset-id="ed4e1f87-9d7b-401f-a3a5-04e7bc4efea3" referrerpolicy="no-referrer"><figcaption><span>维基百科。。。</span></figcaption></figure><ul><li>简单理解，相对线性数据结构 hashmap，trie 类似一个树状字典。在遍历单词时，如果当前字符存在，就往下继续遍历；如果没有就提前返回 false。每个单词的末尾，即 leaf node，需要标注为 endWord。</li><li>引入 trie 以后，原本遍历 hashmap 时需要的 O（n）的费时可以简化为 O（1）。</li><li>为了进一步简化时间复杂度，在 trie 中添加 removeWord 方法：如果单词被找到，就删除它，因为本题中目标单词序列没有重复。。。</li></ul><p><br></p><hr><pre class="ql-syntax" spellcheck="false"># 引入 Trie 后的完整代码如下 🥲
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.isWord = False
+        self.refs = 0
+
+    def addWord(self, word):
+        cur = self
+        cur.refs += 1
+        for c in word:
+            if c not in cur.children:
+                cur.children[c] = TrieNode()
+            cur = cur.children[c]
+            cur.refs += 1
+        cur.isWord = True
+
+    def removeWord(self, word):
+        cur = self
+        cur.refs -= 1
+        for c in word:
+            if c in cur.children:
+                cur = cur.children[c]
+                cur.refs -= 1
+
+class Solution:
+    def findWords(self, board: List[List[str]], words: List[str]) -&gt; List[str]:
+        root = TrieNode()
+        for w in words:
+            root.addWord(w)
+
+        ROWS, COLS = len(board), len(board[0])
+        res, visit = set(), set()
+
+        def dfs(r, c, node, word):
+            if (
+                r &lt; 0
+                or c &lt; 0
+                or r == ROWS
+                or c == COLS
+                or board[r][c] not in node.children
+                or node.children[board[r][c]].refs &lt; 1
+                or (r, c) in visit
+            ):
+                return
+
+            visit.add((r, c))
+            node = node.children[board[r][c]]
+            word += board[r][c]
+            if node.isWord:
+                node.isWord = False
+                res.add(word)
+                root.removeWord(word)
+
+            dfs(r + 1, c, node, word)
+            dfs(r - 1, c, node, word)
+            dfs(r, c + 1, node, word)
+            dfs(r, c - 1, node, word)
+            visit.remove((r, c))
+
+        for r in range(ROWS):
+            for c in range(COLS):
+                dfs(r, c, root, "")
+
+        return list(res)
+</pre><p><br></p><hr><p><strong>Constraints</strong></p><ul><li><code>m == board.length</code></li><li><code>n == board[i].length</code></li><li><code>1 &lt;= m, n &lt;= 12</code></li><li><code>board[i][j]</code>&nbsp;is a lowercase English letter.</li><li><code>1 &lt;= words.length &lt;= 3 * 10<sup>4</sup></code></li><li><code>1 &lt;= words[i].length &lt;= 10</code></li><li><code>words[i]</code>&nbsp;consists of lowercase English letters.</li><li>All the strings of&nbsp;<code>words</code>&nbsp;are unique.</li></ul><p>对比 79， 升级后的 212 要求算法能够搜索高达 3 * 10<sup>4   </sup>单词序列……<strong>考试时，听到这种大数字，基本上预示明眼可见的一些简单解法，肯定是通不过的了……难题登场了……🥲</strong></p><p><br></p><p><strong>Big O</strong></p><ul><li>Time：引入 trie 后，复杂度从 O（n * m * 4 * k * 单词长度 ）可以简化为&nbsp;O（n * m * 4 * 单词长度 ）</li><li>space：O（k），k 为目标搜寻单词序列长度。如果要搜 1000 个单词，返回 res 长度最坏的时候有 1000 😭</li></ul><p><u>本题十分复杂，如有错误，欢迎大佬评论区指证。</u></p><p><br></p><p><strong>测试</strong></p><ul><li>序列中一些单词存在，一些单词不存在</li><li>当然不要忘了重点：一次搜 3000 个单词的极限值……</li></ul><p><br></p><hr><p><strong>总结</strong></p><ul><li>不少难题是由中档、简单档题 循序渐进 + 升级 + 变形 + 组装 而来，例如本题在 79 的 backtracking 等基础之上又组装添加了 trie 元素。<strong>欲解难题，需要对基础题有深度理解</strong>。</li><li>一些<strong>难题并不是拿到题目后完全没有思路</strong>，例如本题……而是<strong>那些显而易见的简易思路</strong>（例如 brute force）<strong>将造成时间复杂度超级复杂，需要引入高档数据结构</strong>（如本题涉及的 trie 知识点）又<strong>或者高档算法思路</strong>（如 dynamic programming🙈）<strong>优化</strong>……即难题难点所在……😭</li><li>考试时如果遇上这种题，如果反应不过来先把 brute force + hashmap 的普通解法拿出来给考官讨论下，总比一行代码不写得 0 分强。如果考官暗示 trie，一定要接住……😭</li></ul>
+
+  </div><a class="u-url" href="/blog/matters/2022/09/28/MATTERS-%E5%B0%8F%E7%99%BD%E5%9D%9A%E6%8C%81%E5%88%B7-212-%E6%90%9C%E5%8D%95%E8%AF%8D-2.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">零博客</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">零博客</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/agorahub"><svg class="svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg> <span class="username">agorahub</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Read blog on demand.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
