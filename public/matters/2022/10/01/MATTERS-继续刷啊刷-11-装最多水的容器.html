@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>继续刷啊刷 11 ～ 装最多水的容器 | 零博客</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="继续刷啊刷 11 ～ 装最多水的容器" />
+<meta name="author" content="土豆炒青椒" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="基本信息 题号：11题厂：脸书，谷歌难度系数：中 数组数字代表容器两边的高度，在哪两个容器边界内，可装水做多？ 解题思路 根据日常水桶原理，装水要以最短的那个边算 到了本题，自然就是任选两个边（x 和 y），x 和 y 中较小者为高，x 和 y 之间的横轴距离为底。「底 * 高」为可装水量，遍历所有可装水组合，返回最大值即可如何遍历所有装水组合？brute force 可以，但是采用双指针原理，可以把时间复杂度降低到 O（n）—— 左、右指针相向而行直到交叉为止，在此过程中把最大值找出作为结果返回 class Solution: def maxArea(self, height: List[int]) -&gt; int: # 初始返回值为 0 res = 0 # 创建左，右双指针，相向而行 l, r = 0, len(height) - 1 while l &lt; r: area = (r - l) * min(height[l], height[r]) res = max(res, area)" />
+<meta property="og:description" content="基本信息 题号：11题厂：脸书，谷歌难度系数：中 数组数字代表容器两边的高度，在哪两个容器边界内，可装水做多？ 解题思路 根据日常水桶原理，装水要以最短的那个边算 到了本题，自然就是任选两个边（x 和 y），x 和 y 中较小者为高，x 和 y 之间的横轴距离为底。「底 * 高」为可装水量，遍历所有可装水组合，返回最大值即可如何遍历所有装水组合？brute force 可以，但是采用双指针原理，可以把时间复杂度降低到 O（n）—— 左、右指针相向而行直到交叉为止，在此过程中把最大值找出作为结果返回 class Solution: def maxArea(self, height: List[int]) -&gt; int: # 初始返回值为 0 res = 0 # 创建左，右双指针，相向而行 l, r = 0, len(height) - 1 while l &lt; r: area = (r - l) * min(height[l], height[r]) res = max(res, area)" />
+<link rel="canonical" href="https://agora0.gitlab.io/blog/matters/2022/10/01/MATTERS-%E7%BB%A7%E7%BB%AD%E5%88%B7%E5%95%8A%E5%88%B7-11-%E8%A3%85%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8.html" />
+<meta property="og:url" content="https://agora0.gitlab.io/blog/matters/2022/10/01/MATTERS-%E7%BB%A7%E7%BB%AD%E5%88%B7%E5%95%8A%E5%88%B7-11-%E8%A3%85%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8.html" />
+<meta property="og:site_name" content="零博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-01T08:39:45+08:00" />
+<script type="application/ld+json">
+{"headline":"继续刷啊刷 11 ～ 装最多水的容器","dateModified":"2022-10-01T08:39:45+08:00","datePublished":"2022-10-01T08:39:45+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://agora0.gitlab.io/blog/matters/2022/10/01/MATTERS-%E7%BB%A7%E7%BB%AD%E5%88%B7%E5%95%8A%E5%88%B7-11-%E8%A3%85%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8.html"},"description":"基本信息 题号：11题厂：脸书，谷歌难度系数：中 数组数字代表容器两边的高度，在哪两个容器边界内，可装水做多？ 解题思路 根据日常水桶原理，装水要以最短的那个边算 到了本题，自然就是任选两个边（x 和 y），x 和 y 中较小者为高，x 和 y 之间的横轴距离为底。「底 * 高」为可装水量，遍历所有可装水组合，返回最大值即可如何遍历所有装水组合？brute force 可以，但是采用双指针原理，可以把时间复杂度降低到 O（n）—— 左、右指针相向而行直到交叉为止，在此过程中把最大值找出作为结果返回 class Solution: def maxArea(self, height: List[int]) -&gt; int: # 初始返回值为 0 res = 0 # 创建左，右双指针，相向而行 l, r = 0, len(height) - 1 while l &lt; r: area = (r - l) * min(height[l], height[r]) res = max(res, area)","author":{"@type":"Person","name":"土豆炒青椒"},"@type":"BlogPosting","url":"https://agora0.gitlab.io/blog/matters/2022/10/01/MATTERS-%E7%BB%A7%E7%BB%AD%E5%88%B7%E5%95%8A%E5%88%B7-11-%E8%A3%85%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://agora0.gitlab.io/blog/feed.xml" title="零博客" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">零博客</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/readme/">BLOG⓪</a><a class="page-link" href="/blog/covid/">C⓪V①D</a><a class="page-link" href="/blog/initium/">muitinⒾ</a><a class="page-link" href="/blog/inmedia/">aidemnⒾ</a><a class="page-link" href="/blog/matters/">srettaⓂ</a><a class="page-link" href="/blog/pq/">qⓅ</a><a class="page-link" href="/blog/vocus/">sucoⓋ</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">继续刷啊刷 11 ～ 装最多水的容器</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-10-01T08:39:45+08:00" itemprop="datePublished">Oct 1, 2022
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">土豆炒青椒</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><strong>基本信息</strong></p><ul><li>题号：11</li><li>题厂：脸书，谷歌</li><li>难度系数：中</li></ul><p><br></p><hr><figure class="image"><img src="https://assets.matters.news/embed/2bde9086-9ad2-4b65-9f17-3571cf641510.jpeg" data-asset-id="2bde9086-9ad2-4b65-9f17-3571cf641510" referrerpolicy="no-referrer"><figcaption><span></span></figcaption></figure><p>数组数字代表容器两边的高度，在哪两个容器边界内，可装水做多？</p><p><strong>解题思路</strong></p><ul><li>根据日常水桶原理，装水要以最短的那个边算</li></ul><figure class="image"><img src="https://assets.matters.news/embed/a5608be2-5db5-4bc4-8282-30f567ee0456.jpeg" data-asset-id="a5608be2-5db5-4bc4-8282-30f567ee0456" referrerpolicy="no-referrer"><figcaption><span></span></figcaption></figure><p><br></p><ul><li>到了本题，自然就是任选两个边（x 和 y），x 和 y 中较小者为高，x 和 y 之间的横轴距离为底。「底 * 高」为可装水量，遍历所有可装水组合，返回最大值即可</li><li>如何遍历所有装水组合？brute force 可以，但是采用双指针原理，可以把时间复杂度降低到 O（n）—— 左、右指针相向而行直到交叉为止，在此过程中把最大值找出作为结果返回</li></ul><p><br></p><hr><pre class="ql-syntax" spellcheck="false">class Solution:
+    def maxArea(self, height: List[int]) -&gt; int:
+        # 初始返回值为 0
+        res = 0
+        
+        # 创建左，右双指针，相向而行
+        l, r = 0, len(height) - 1
+        
+        while l &lt; r:
+            area = (r - l) * min(height[l], height[r])
+            res = max(res, area)
+
+            # 更新最大容水量后，为了获取最大值，移动数值较小的那个指针
+            if height[l] &lt; height[r]:
+                l += 1
+            else:
+                r -= 1
+                
+        return res
+</pre><p><br></p><hr><p><strong>Constraints</strong></p><ul><li><code>n == height.length</code></li><li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li><li><code>0 &lt;= height[i] &lt;= 10<sup>4</sup></code></li></ul><p>本题数据基本于是 brute force 是不行的。考试时，可以向考官确认 n 的最小值。</p><p><br></p><p><strong>Big O</strong></p><ul><li>Time：O（n）</li><li>Space：O（1）</li></ul><p><br></p><p><strong>测试</strong></p><ul><li>n = 2&nbsp;</li><li>n 取最大值，测试算法效率</li><li>……</li></ul><p><br></p><hr><p><strong>总结</strong></p><p>正常难度中档题。</p><p>考点除了要熟悉双指针代码套路，还要反应过来本题可以用双指针思路简化。</p>
+
+  </div><a class="u-url" href="/blog/matters/2022/10/01/MATTERS-%E7%BB%A7%E7%BB%AD%E5%88%B7%E5%95%8A%E5%88%B7-11-%E8%A3%85%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">零博客</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">零博客</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/agorahub"><svg class="svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg> <span class="username">agorahub</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Read blog on demand.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
