@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>每日刷题 881 ～ 救生船 | 零博客</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="每日刷题 881 ～ 救生船" />
+<meta name="author" content="土豆炒青椒" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="基本信息 题号：881题厂：亚麻难度系数：中 数组 people：待救人员的体重 limit：救生船最大承重 每艘船只能装 2 个人，问要最少派多少艘船可以把人全部救回…… 例如：people = [1,2], limit = 3 只需派一艘船装 2 人即可：1 + 2 = 3 解题思路 题目限制个人体重最大值 大于等于 limit 上限 如果个人体重刚好等于 limit 上线，无需配对；2 人搭船配对的情况只发生在 2 人体重都小于 limit 上限且 2 人体重相加也不超标……为了让派出船的数量最小，2 人搭船配对时要尽量接近上限值不要浪费。例如 limit 为 10，9 + 1 = 10；4 + 6 = 10 不造成浪费；而 1 + 4 配对将造成 9 + 6 超标需要多派一艘船……于是著名的贪心算法闪亮登场了……怎么才能 9 + 1 完美配对？可以考虑先将数组进行排序，再按照双指针逻辑相向而行…… class Solution: def numRescueBoats(self, people: List[int], limit: int) -&gt; int: people.sort() res = 0 # 船只初始数量 l, r = 0, len(people) - 1 # 右指针每移动一格，就派出一艘船…… # 如果左指针刚好可以和右指针配对，左指针也跟着移动一格……直到左右指针相遇为止…… while l &lt;= r: remain = limit - people[r] r -= 1 res += 1 if l &lt;= r and remain &gt;= people[l]: l += 1 return res Constraints 1 &lt;= people.length &lt;= 5 * 1041 &lt;= people[i] &lt;= limit &lt;= 3 * 104 个人体重最大限就是等于 limit 上限，即一人独享一艘船。考试时，要向考官咨询问清楚…… Big O Time：O（nlog n），双指针虽然复杂度为 O（n），但用了排序，所以时间复杂度以最高额度计算……Space：O（1） 测试 当只有一个人时当混合时…… 总结 本题虽然代码简单，但需要运用到略高级的贪心算法，应该划归中档偏难除了熟练掌握双指针，还要在理解题意后反应到需要运用贪心算法解决问题……本题可作为贪心算法入门题定期复习……🙈" />
+<meta property="og:description" content="基本信息 题号：881题厂：亚麻难度系数：中 数组 people：待救人员的体重 limit：救生船最大承重 每艘船只能装 2 个人，问要最少派多少艘船可以把人全部救回…… 例如：people = [1,2], limit = 3 只需派一艘船装 2 人即可：1 + 2 = 3 解题思路 题目限制个人体重最大值 大于等于 limit 上限 如果个人体重刚好等于 limit 上线，无需配对；2 人搭船配对的情况只发生在 2 人体重都小于 limit 上限且 2 人体重相加也不超标……为了让派出船的数量最小，2 人搭船配对时要尽量接近上限值不要浪费。例如 limit 为 10，9 + 1 = 10；4 + 6 = 10 不造成浪费；而 1 + 4 配对将造成 9 + 6 超标需要多派一艘船……于是著名的贪心算法闪亮登场了……怎么才能 9 + 1 完美配对？可以考虑先将数组进行排序，再按照双指针逻辑相向而行…… class Solution: def numRescueBoats(self, people: List[int], limit: int) -&gt; int: people.sort() res = 0 # 船只初始数量 l, r = 0, len(people) - 1 # 右指针每移动一格，就派出一艘船…… # 如果左指针刚好可以和右指针配对，左指针也跟着移动一格……直到左右指针相遇为止…… while l &lt;= r: remain = limit - people[r] r -= 1 res += 1 if l &lt;= r and remain &gt;= people[l]: l += 1 return res Constraints 1 &lt;= people.length &lt;= 5 * 1041 &lt;= people[i] &lt;= limit &lt;= 3 * 104 个人体重最大限就是等于 limit 上限，即一人独享一艘船。考试时，要向考官咨询问清楚…… Big O Time：O（nlog n），双指针虽然复杂度为 O（n），但用了排序，所以时间复杂度以最高额度计算……Space：O（1） 测试 当只有一个人时当混合时…… 总结 本题虽然代码简单，但需要运用到略高级的贪心算法，应该划归中档偏难除了熟练掌握双指针，还要在理解题意后反应到需要运用贪心算法解决问题……本题可作为贪心算法入门题定期复习……🙈" />
+<link rel="canonical" href="https://agora0.gitlab.io/blog/matters/2022/10/08/MATTERS-%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98-881-%E6%95%91%E7%94%9F%E8%88%B9.html" />
+<meta property="og:url" content="https://agora0.gitlab.io/blog/matters/2022/10/08/MATTERS-%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98-881-%E6%95%91%E7%94%9F%E8%88%B9.html" />
+<meta property="og:site_name" content="零博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-08T09:23:04+08:00" />
+<script type="application/ld+json">
+{"headline":"每日刷题 881 ～ 救生船","dateModified":"2022-10-08T09:23:04+08:00","datePublished":"2022-10-08T09:23:04+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://agora0.gitlab.io/blog/matters/2022/10/08/MATTERS-%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98-881-%E6%95%91%E7%94%9F%E8%88%B9.html"},"description":"基本信息 题号：881题厂：亚麻难度系数：中 数组 people：待救人员的体重 limit：救生船最大承重 每艘船只能装 2 个人，问要最少派多少艘船可以把人全部救回…… 例如：people = [1,2], limit = 3 只需派一艘船装 2 人即可：1 + 2 = 3 解题思路 题目限制个人体重最大值 大于等于 limit 上限 如果个人体重刚好等于 limit 上线，无需配对；2 人搭船配对的情况只发生在 2 人体重都小于 limit 上限且 2 人体重相加也不超标……为了让派出船的数量最小，2 人搭船配对时要尽量接近上限值不要浪费。例如 limit 为 10，9 + 1 = 10；4 + 6 = 10 不造成浪费；而 1 + 4 配对将造成 9 + 6 超标需要多派一艘船……于是著名的贪心算法闪亮登场了……怎么才能 9 + 1 完美配对？可以考虑先将数组进行排序，再按照双指针逻辑相向而行…… class Solution: def numRescueBoats(self, people: List[int], limit: int) -&gt; int: people.sort() res = 0 # 船只初始数量 l, r = 0, len(people) - 1 # 右指针每移动一格，就派出一艘船…… # 如果左指针刚好可以和右指针配对，左指针也跟着移动一格……直到左右指针相遇为止…… while l &lt;= r: remain = limit - people[r] r -= 1 res += 1 if l &lt;= r and remain &gt;= people[l]: l += 1 return res Constraints 1 &lt;= people.length &lt;= 5 * 1041 &lt;= people[i] &lt;= limit &lt;= 3 * 104 个人体重最大限就是等于 limit 上限，即一人独享一艘船。考试时，要向考官咨询问清楚…… Big O Time：O（nlog n），双指针虽然复杂度为 O（n），但用了排序，所以时间复杂度以最高额度计算……Space：O（1） 测试 当只有一个人时当混合时…… 总结 本题虽然代码简单，但需要运用到略高级的贪心算法，应该划归中档偏难除了熟练掌握双指针，还要在理解题意后反应到需要运用贪心算法解决问题……本题可作为贪心算法入门题定期复习……🙈","author":{"@type":"Person","name":"土豆炒青椒"},"@type":"BlogPosting","url":"https://agora0.gitlab.io/blog/matters/2022/10/08/MATTERS-%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98-881-%E6%95%91%E7%94%9F%E8%88%B9.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://agora0.gitlab.io/blog/feed.xml" title="零博客" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">零博客</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/readme/">BLOG⓪</a><a class="page-link" href="/blog/covid/">C⓪V①D</a><a class="page-link" href="/blog/initium/">muitinⒾ</a><a class="page-link" href="/blog/inmedia/">aidemnⒾ</a><a class="page-link" href="/blog/matters/">srettaⓂ</a><a class="page-link" href="/blog/pq/">qⓅ</a><a class="page-link" href="/blog/vocus/">sucoⓋ</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">每日刷题 881 ～ 救生船</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-10-08T09:23:04+08:00" itemprop="datePublished">Oct 8, 2022
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">土豆炒青椒</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><strong>基本信息</strong></p><ul><li>题号：881</li><li>题厂：亚麻</li><li>难度系数：中</li></ul><p><br></p><hr><p>数组 people：待救人员的体重</p><p>limit：救生船最大承重</p><p>每艘船只能装 2 个人，问要<strong>最少</strong>派多少艘船可以把人全部救回……</p><pre class="ql-syntax" spellcheck="false">例如：people = [1,2], limit = 3
+</pre><p>只需派一艘船装 2 人即可：1 + 2 = 3</p><p><strong>解题思路</strong></p><p>题目限制个人体重最大值 大于等于 limit 上限</p><ul><li>如果个人体重刚好等于 limit 上线，无需配对；2 人搭船配对的情况只发生在 2 人体重都小于 limit 上限且 2 人体重相加也不超标……</li><li>为了让派出船的数量最小，2 人搭船配对时要尽量接近上限值不要浪费。例如 limit 为 10，9 + 1 = 10；4 + 6 = 10 不造成浪费；而 1 + 4 配对将造成 9 + 6 超标需要多派一艘船……于是<strong>著名的贪心算法闪亮登场了</strong>……</li><li>怎么才能 9 + 1 完美配对？可以考虑先将数组进行排序，再按照双指针逻辑相向而行……</li></ul><hr><pre class="ql-syntax" spellcheck="false">class Solution:
+    def numRescueBoats(self, people: List[int], limit: int) -&gt; int:
+        people.sort()
+        
+        res = 0 # 船只初始数量
+        l, r = 0, len(people) - 1
+        
+        # 右指针每移动一格，就派出一艘船……
+        # 如果左指针刚好可以和右指针配对，左指针也跟着移动一格……直到左右指针相遇为止……
+        while l &lt;= r:
+            remain = limit - people[r]
+            r -= 1
+            res += 1
+            
+            if l &lt;= r and remain &gt;= people[l]:
+                l += 1
+                
+        return res
+</pre><hr><p><strong>Constraints</strong></p><ul><li><code>1 &lt;= people.length &lt;= 5 * 104</code></li><li><code>1 &lt;= people[i] &lt;= limit &lt;= 3 * 104</code></li></ul><p>个人体重最大限就是等于 limit 上限，即一人独享一艘船。考试时，要向考官咨询问清楚……</p><p><br></p><p><strong>Big O</strong></p><ul><li>Time：O（nlog n），双指针虽然复杂度为 O（n），但用了排序，所以时间复杂度以最高额度计算……</li><li>Space：O（1）</li></ul><p><br></p><p><strong>测试</strong></p><ul><li>当只有一个人时</li><li>当混合时……</li></ul><p><br></p><hr><p><strong>总结</strong></p><ul><li>本题虽然代码简单，但需要运用到略高级的贪心算法，应该划归中档偏难</li><li>除了熟练掌握双指针，还要在理解题意后反应到需要运用贪心算法解决问题……</li><li>本题可作为贪心算法入门题定期复习……🙈</li></ul>
+
+  </div><a class="u-url" href="/blog/matters/2022/10/08/MATTERS-%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98-881-%E6%95%91%E7%94%9F%E8%88%B9.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">零博客</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">零博客</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/agorahub"><svg class="svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg> <span class="username">agorahub</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Read blog on demand.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
