@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>今天你刷题了嘛 605 ～插花？ | 零博客</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="今天你刷题了嘛 605 ～插花？" />
+<meta name="author" content="土豆炒青椒" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="基本信息 题号：605题厂：谷歌难度系数：低 数组 flowerbed代表插花位：1 代表该位已种花，0 代表还没种…… 要求只能隔空插花，即不能出现 2+ 连续 1 问：改数组能插入 n 朵花嘛？能——返回 true，不能——返回 false 例如：flowerbed = [1,0,0,0,1], n = 1" />
+<meta property="og:description" content="基本信息 题号：605题厂：谷歌难度系数：低 数组 flowerbed代表插花位：1 代表该位已种花，0 代表还没种…… 要求只能隔空插花，即不能出现 2+ 连续 1 问：改数组能插入 n 朵花嘛？能——返回 true，不能——返回 false 例如：flowerbed = [1,0,0,0,1], n = 1" />
+<link rel="canonical" href="https://agora0.gitlab.io/blog/matters/2022/10/12/MATTERS-%E4%BB%8A%E5%A4%A9%E4%BD%A0%E5%88%B7%E9%A2%98%E4%BA%86%E5%98%9B-605-%E6%8F%92%E8%8A%B1.html" />
+<meta property="og:url" content="https://agora0.gitlab.io/blog/matters/2022/10/12/MATTERS-%E4%BB%8A%E5%A4%A9%E4%BD%A0%E5%88%B7%E9%A2%98%E4%BA%86%E5%98%9B-605-%E6%8F%92%E8%8A%B1.html" />
+<meta property="og:site_name" content="零博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-12T07:23:39+08:00" />
+<script type="application/ld+json">
+{"headline":"今天你刷题了嘛 605 ～插花？","dateModified":"2022-10-12T07:23:39+08:00","datePublished":"2022-10-12T07:23:39+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://agora0.gitlab.io/blog/matters/2022/10/12/MATTERS-%E4%BB%8A%E5%A4%A9%E4%BD%A0%E5%88%B7%E9%A2%98%E4%BA%86%E5%98%9B-605-%E6%8F%92%E8%8A%B1.html"},"description":"基本信息 题号：605题厂：谷歌难度系数：低 数组 flowerbed代表插花位：1 代表该位已种花，0 代表还没种…… 要求只能隔空插花，即不能出现 2+ 连续 1 问：改数组能插入 n 朵花嘛？能——返回 true，不能——返回 false 例如：flowerbed = [1,0,0,0,1], n = 1","author":{"@type":"Person","name":"土豆炒青椒"},"@type":"BlogPosting","url":"https://agora0.gitlab.io/blog/matters/2022/10/12/MATTERS-%E4%BB%8A%E5%A4%A9%E4%BD%A0%E5%88%B7%E9%A2%98%E4%BA%86%E5%98%9B-605-%E6%8F%92%E8%8A%B1.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://agora0.gitlab.io/blog/feed.xml" title="零博客" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">零博客</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/readme/">BLOG⓪</a><a class="page-link" href="/blog/covid/">C⓪V①D</a><a class="page-link" href="/blog/initium/">muitinⒾ</a><a class="page-link" href="/blog/inmedia/">aidemnⒾ</a><a class="page-link" href="/blog/matters/">srettaⓂ</a><a class="page-link" href="/blog/pq/">qⓅ</a><a class="page-link" href="/blog/vocus/">sucoⓋ</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">今天你刷题了嘛 605 ～插花？</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-10-12T07:23:39+08:00" itemprop="datePublished">Oct 12, 2022
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">土豆炒青椒</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><strong>基本信息</strong></p><ul><li>题号：605</li><li>题厂：谷歌</li><li>难度系数：低</li></ul><p><br></p><hr><p>数组 flowerbed代表插花位：1 代表该位已种花，0 代表还没种……</p><p>要求只能隔空插花，即不能出现 2+ 连续 1</p><p>问：改数组能插入 n 朵花嘛？能——返回 true，不能——返回 false</p><pre class="ql-syntax" spellcheck="false">例如：flowerbed = [1,0,0,0,1], n = 1
+
+返回 true，插在第三个槽位即可满足条件，即：[1,0,1,0,1]
+</pre><p><br></p><p><strong>解题思路</strong></p><ul><li>本题的解题思路是显而易见的——遍历数组，当卡位可插花时，counter 加 1；</li><li>判断当前卡位能否插花：元素 flowerbed[i] 为 0 且前后卡位 flowerbed[i + 1] flowerbed[i - 1] 均为 0</li><li>一旦 counter 大于等于 n，即可返回 true</li></ul><p>  </p><hr><pre class="ql-syntax" spellcheck="false">class Solution:
+    def canPlaceFlowers(self, flowerbed: List[int], n: int) -&gt; bool:
+        count = 0
+        
+        for i in range(len(flowerbed)):
+            if count &gt;= n:
+                return True
+            
+            if flowerbed[i] == 0:
+                # 判断前卡位是否可以插花
+                left = (i == 0) or (flowerbed[i - 1] == 0)
+                # 判断后卡位能否插花
+                right = (i == len(flowerbed) - 1) or (flowerbed[i + 1] == 0)
+                
+                if left and right:
+                    flowerbed[i] = 1
+                    count += 1
+                    
+        return count &gt;= n
+</pre><hr><p><strong>Constraints</strong></p><ul><li><code>1 &lt;= flowerbed.length &lt;= 2 * 104</code></li><li><code>flowerbed[i] is 0 or 1.</code></li><li><code>There are no two adjacent flowers in flowerbed.</code></li><li><code>0 &lt;= n &lt;= flowerbed.length</code></li></ul><p>考试时可以向考官询问已知的花床数组会不会自带 2+ 连续 1</p><p>需不需哟判断当 n 大于花床数组长度的案例</p><p><br></p><p><strong>Big O</strong></p><ul><li>Time：O（n）</li><li>Space：O（1）</li></ul><p><br></p><p><strong>测试</strong></p><ul><li>花床 0 开头，0 结尾案例</li><li>花床 1 开头，1 结尾案例</li><li>花床为单数，偶数时……</li></ul><p><br></p><hr><p><strong>总结</strong></p><ul><li>本题代码以及解体思路属于简单级别。但要在想出解题思路后迅速写出无 bug 漏洞的代码，需要思维严密</li><li>本题作为基础题，勤加练习方能熟能生巧😭</li></ul><p><br></p>
+
+  </div><a class="u-url" href="/blog/matters/2022/10/12/MATTERS-%E4%BB%8A%E5%A4%A9%E4%BD%A0%E5%88%B7%E9%A2%98%E4%BA%86%E5%98%9B-605-%E6%8F%92%E8%8A%B1.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">零博客</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">零博客</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/agorahub"><svg class="svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg> <span class="username">agorahub</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Read blog on demand.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
