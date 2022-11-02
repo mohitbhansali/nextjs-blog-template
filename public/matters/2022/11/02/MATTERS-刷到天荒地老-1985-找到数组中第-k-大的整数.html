@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>刷到天荒地老 1985 ～ 找到数组中第 K 大的整数 | 零博客</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="刷到天荒地老 1985 ～ 找到数组中第 K 大的整数" />
+<meta name="author" content="土豆炒青椒" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="基本信息 题号：1985题厂：谷歌、脸书、亚麻难度系数：中 有一个数组，找到排行 k 的整数，并返回 例如：nums = [&quot;3&quot;,&quot;6&quot;,&quot;7&quot;,&quot;10&quot;], k = 4" />
+<meta property="og:description" content="基本信息 题号：1985题厂：谷歌、脸书、亚麻难度系数：中 有一个数组，找到排行 k 的整数，并返回 例如：nums = [&quot;3&quot;,&quot;6&quot;,&quot;7&quot;,&quot;10&quot;], k = 4" />
+<link rel="canonical" href="https://agora0.gitlab.io/blog/matters/2022/11/02/MATTERS-%E5%88%B7%E5%88%B0%E5%A4%A9%E8%8D%92%E5%9C%B0%E8%80%81-1985-%E6%89%BE%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%AC-k-%E5%A4%A7%E7%9A%84%E6%95%B4%E6%95%B0.html" />
+<meta property="og:url" content="https://agora0.gitlab.io/blog/matters/2022/11/02/MATTERS-%E5%88%B7%E5%88%B0%E5%A4%A9%E8%8D%92%E5%9C%B0%E8%80%81-1985-%E6%89%BE%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%AC-k-%E5%A4%A7%E7%9A%84%E6%95%B4%E6%95%B0.html" />
+<meta property="og:site_name" content="零博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-02T09:51:39+08:00" />
+<script type="application/ld+json">
+{"headline":"刷到天荒地老 1985 ～ 找到数组中第 K 大的整数","dateModified":"2022-11-02T09:51:39+08:00","datePublished":"2022-11-02T09:51:39+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://agora0.gitlab.io/blog/matters/2022/11/02/MATTERS-%E5%88%B7%E5%88%B0%E5%A4%A9%E8%8D%92%E5%9C%B0%E8%80%81-1985-%E6%89%BE%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%AC-k-%E5%A4%A7%E7%9A%84%E6%95%B4%E6%95%B0.html"},"description":"基本信息 题号：1985题厂：谷歌、脸书、亚麻难度系数：中 有一个数组，找到排行 k 的整数，并返回 例如：nums = [&quot;3&quot;,&quot;6&quot;,&quot;7&quot;,&quot;10&quot;], k = 4","author":{"@type":"Person","name":"土豆炒青椒"},"@type":"BlogPosting","url":"https://agora0.gitlab.io/blog/matters/2022/11/02/MATTERS-%E5%88%B7%E5%88%B0%E5%A4%A9%E8%8D%92%E5%9C%B0%E8%80%81-1985-%E6%89%BE%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%AC-k-%E5%A4%A7%E7%9A%84%E6%95%B4%E6%95%B0.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://agora0.gitlab.io/blog/feed.xml" title="零博客" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">零博客</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/readme/">BLOG⓪</a><a class="page-link" href="/blog/covid/">C⓪V①D</a><a class="page-link" href="/blog/initium/">muitinⒾ</a><a class="page-link" href="/blog/inmedia/">aidemnⒾ</a><a class="page-link" href="/blog/matters/">srettaⓂ</a><a class="page-link" href="/blog/pq/">qⓅ</a><a class="page-link" href="/blog/vocus/">sucoⓋ</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">刷到天荒地老 1985 ～ 找到数组中第 K 大的整数</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-11-02T09:51:39+08:00" itemprop="datePublished">Nov 2, 2022
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">土豆炒青椒</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><strong>基本信息</strong></p><ul><li>题号：1985</li><li>题厂：谷歌、脸书、亚麻</li><li>难度系数：中</li></ul><p><br></p><hr><p>有一个数组，找到排行 k 的整数，并返回</p><pre class="ql-syntax" spellcheck="false">例如：nums = ["3","6","7","10"], k = 4 
+
+第 4 大的是 3，返回 3（当然这里需要做字符与整数之间数据类型转换）
+</pre><p><br></p><p><strong>解题思路</strong></p><ul><li>寻找 K 。。。的元素，一般需要 heap 登场</li><li><strong>如果本题能想到运用 heap（priority queue），剩下的逻辑还是很简单的</strong></li></ul><hr><pre class="ql-syntax" spellcheck="false">class Solution:
+    def kthLargestNumber(self, nums: List[str], k: int) -&gt; str:
+        # 初始化 minHeap
+        minHeap = []
+        heapq.heapify(minHeap)
+        
+        for n in nums:
+            # 如果 minHeap 的长度小于 k，说明还可以往里面塞;
+            # 如果 minHeap 长度等于 k，考察当前元素 与 minHeap 最小值——如果当前元素大于 minHeap 最小值，说明可以替换……
+            if len(minHeap) &lt; k:
+                heapq.heappush(minHeap, int(n))
+            elif int(n) &gt; curMin:
+                heapq.heappop(minHeap)
+                heapq.heappush(minHeap, int(n))
+        
+        # 遍历结束后，返回 minHeap 第一个元素，即最小值          
+        return str(heapq.heappop(minHeap))
+</pre><hr><h2><br></h2><p><strong>Constraints</strong></p><ul><li><code>1 &lt;= k &lt;= nums.length &lt;= 104</code></li><li><code>1 &lt;= nums[i].length &lt;= 100</code></li><li><code>nums[i] consists of only digits.</code></li><li><code>nums[i] will not have any leading zeros.</code></li></ul><p>解题前，可以就 k 和 nums 数组长度取值范围，与考官进行讨论并确认</p><p>另外本题涉及字符和整数之间转换问题，也需要就此进行确认……</p><p><br></p><p><strong>Big O</strong></p><ul><li>Time：O（ n * logn ）做了一遍循环 O（n），每次遍历时 minHeap 需要整理一次 O（logn）</li><li>Space：O（n）</li></ul><p><br></p><hr><p><strong><u>当然本题既然可以用 minHeap 做，稍微反一下，用 maxHeap 也一样可以反向操作，原理都是利用 heap；</u></strong></p><p>而此时的big O 为 O（n + klogn），考虑到 k 有很大的情况</p><pre class="ql-syntax" spellcheck="false">class Solution:
+    def kthLargestNumber(self, nums: List[str], k: int) -&gt; str:
+        maxHeap = [-int(n) for n in nums ]
+        heapq.heapify(maxHeap)
+        
+        # 当 k 大于 1 时，就不停 pop；
+        # 最后那个留给返回 🙈
+        while k &gt; 1:
+            heapq.heappop(maxHeap)
+            k -= 1
+        
+        return str(-heapq.heappop(maxHeap))
+</pre><p><br></p><p><u>不过，貌似无论 minHeap 还是 maxHeap，效率半斤八两😅</u></p><figure class="image"><img src="https://assets.matters.news/embed/51d3465e-2358-4f16-8e6c-2f87c6b8565d.png" data-asset-id="51d3465e-2358-4f16-8e6c-2f87c6b8565d" referrerpolicy="no-referrer"><figcaption><span></span></figcaption></figure><p><br></p><hr><p><br></p><p><strong>测试</strong></p><ul><li>当 nums 为 1 时</li><li>当 nums 有元素重复时</li><li>……</li></ul><p><br></p><hr><p><strong>总结</strong></p><ul><li>不熟悉 heap 操作特征是不可能想出解答的，知道用 heap 后其实本题还是很 easy 的</li><li>虽然代码简单，但 heap 属于较高级数据结构，所以本题划归中档🥲</li><li>本题有多种解题方法，考察了 heap 使用的经典用法——<strong>heap 常常用来解决“找第 k 元素”题型</strong></li><li>本题需要作为 heap 类别经典面试题型定期复习，<strong>熟悉各种解题思路加深对 heap 的认知</strong></li></ul>
+
+  </div><a class="u-url" href="/blog/matters/2022/11/02/MATTERS-%E5%88%B7%E5%88%B0%E5%A4%A9%E8%8D%92%E5%9C%B0%E8%80%81-1985-%E6%89%BE%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%AC-k-%E5%A4%A7%E7%9A%84%E6%95%B4%E6%95%B0.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">零博客</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">零博客</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/agorahub"><svg class="svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg> <span class="username">agorahub</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Read blog on demand.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
